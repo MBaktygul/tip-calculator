@@ -1,0 +1,284 @@
+/* -------- General styles */
+.icon {
+	width: 1rem;
+}
+
+.section-header {
+	font-weight: var(--font-weight-bold);
+}
+
+.calculator__wrapper {
+	width: 100%;
+	max-width: 23.5rem;
+	margin: 0 auto;
+
+	@media only screen and (min-width: 64rem) {
+		max-width: 56rem;
+	}
+}
+
+.total {
+	color: var(--color-green-text);
+	font-weight: var(--font-weight-bold);
+	font-size: 1.2rem;
+	text-align: end;
+	width: 100%;
+}
+
+/* -------- Header styles */
+.header {
+	width: 6rem;
+	margin: 2.5rem auto;
+}
+
+/* -------- Main styles */
+.main {
+	background-color: var(--color-white);
+	border-radius: var(--border-radius-m);
+}
+
+.main__wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 1.2rem;
+	gap: var(--gap-sm);
+
+	@media only screen and (min-width: 64rem) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--gap-xl);
+		height: 100%;
+		padding: 2rem;
+	}
+}
+
+.main__wrapper-content--left {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: var(--gap-sm);
+}
+
+/* -------- Bill section */
+.bill-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-muted);
+	padding: 1rem;
+	border: 2px solid transparent;
+	width: 100%;
+	border-radius: var(--border-radius-s);
+	cursor: pointer;
+
+	&:hover {
+		border: 2px solid var(--color-accent);
+	}
+
+	> input {
+		background-color: transparent;
+		cursor: pointer;
+	}
+}
+
+/* -------- Tips section */
+.tips-items {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: var(--gap-sm);
+
+	@media only screen and (min-width: 64rem) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+}
+
+.tips-item {
+	width: 100%;
+	padding: 0.8rem 1rem;
+	color: var(--color-white);
+	background-color: var(--color-green-dark);
+	border-radius: var(--border-radius-s);
+	font-size: 1.3rem;
+	text-align: center;
+	font-weight: var(--font-weight-bold);
+	cursor: pointer;
+
+	&:focus-visible {
+		color: var(--color-green-dark);
+		background-color: var(--color-bg-disabled);
+	}
+
+	&:hover {
+		color: var(--color-green-dark);
+		background-color: var(--color-bg-disabled);
+	}
+
+	&.tips-item--active {
+		color: var(--color-green-dark);
+		background-color: var(--color-accent);
+	}
+}
+
+.tips-item-custom {
+	width: 100%;
+	padding: 0.8rem 1rem;
+	font-size: 1.3rem;
+	text-align: center;
+	color: var(--color-green-text);
+	font-weight: var(--font-weight-bold);
+	background-color: var(--color-muted);
+	border: 2px solid transparent;
+	cursor: pointer;
+
+	&:hover {
+		border: 2px solid var(--color-accent);
+		border-radius: var(--border-radius-s);
+	}
+}
+
+/* -------- Person section */
+.person-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-muted);
+	border: 2px solid transparent;
+	padding: 1rem;
+	width: 100%;
+	border-radius: var(--border-radius-s);
+
+	> input {
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+	&:hover {
+		border: 2px solid var(--color-accent);
+		border-radius: var(--border-radius-s);
+		cursor: pointer;
+	}
+}
+
+.person-content-error {
+	border: 2px solid var(--color-error);
+}
+
+.person-headers {
+	display: flex;
+	justify-content: space-between;
+}
+
+.person-header-error {
+	display: none;
+	color: var(--color-error);
+	text-align: end;
+	text-wrap-style: balance;
+
+	&.person-header-error--active {
+		display: block;
+	}
+}
+
+/* -------- Summary section */
+.sum {
+	justify-content: space-between;
+	gap: var(--gap-l);
+	background-color: var(--color-green-dark);
+	color: var(--color-white);
+	padding: 2rem 1rem 1rem 1rem;
+	border-radius: var(--border-radius-m);
+	height: 100%;
+
+	@media only screen and (min-width: 64rem) {
+		padding: 4rem 2rem 2rem 2rem;
+	}
+}
+
+.sum-content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-sm);
+}
+
+.sum-labels__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.sum-labels {
+	display: flex;
+	flex-direction: column;
+	font-weight: var(--font-weight-bold);
+}
+
+.sum-label {
+	font-size: 1rem;
+}
+
+.sum-sublabel {
+	font-size: 0.8rem;
+	color: var(--color-text);
+}
+
+.sum-number {
+	color: var(--color-accent);
+	font-size: 1.3rem;
+	font-weight: var(--font-weight-bold);
+
+	@media only screen and (min-width: 64rem) {
+		font-size: 2rem;
+	}
+}
+
+/* -------- Reset Button */
+.reset-button {
+	padding: 0.8rem 1rem;
+	background-color: var(--color-accent);
+	color: var(--color-green-dark);
+	font-size: 1.3rem;
+	font-weight: var(--font-weight-bold);
+	border-radius: var(--border-radius-s);
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--color-bg);
+	}
+}
+
+.reset-button--disabled {
+	padding: 0.8rem 1rem;
+	font-size: 1.3rem;
+	font-weight: var(--font-weight-bold);
+	border-radius: var(--border-radius-s);
+	color: var(--color-disabled);
+	background-color: var(--color-bg-disabled);
+	cursor: default;
+
+	&:hover {
+		background-color: var(--color-bg-disabled);
+	}
+}
+
+/* -------- Attribution styles */
+.attribution {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	color: var(--color-text);
+	bottom: -2rem;
+}
+
+.attribution span a {
+	color: var(--color-green-dark);
+}
+
+.attribution span a:hover {
+	color: var(--color-accent);
+}
+
+.attribution span a:visited {
+	color: var(--color-green-dark);
+}

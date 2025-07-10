@@ -1,0 +1,40 @@
+// fonts
+:root {
+	--font-stack: 'SpaceMono', sans-serif;
+
+	// font-sizes
+	--font-size-base: 16px;
+	--font-size-input: 24px;
+
+	//font-weights
+	--font-weight-regular: 400;
+	--font-weight-bold: 700;
+
+	// colors
+	//primary
+	--color-accent: hsl(172, 67%, 45%);
+
+	// neutral
+	--color-green-dark: hsl(183, 100%, 15%);
+	--color-disabled: hsla(183, 100%, 15%, 0.3);
+	--color-bg-disabled: hsla(172, 67%, 45%, 0.3);
+	--color-text: hsl(186, 14%, 43%);
+	--color-text-2: hsl(184, 14%, 56%);
+	--color-bg: hsl(185, 41%, 84%);
+	--color-muted: hsl(189, 47%, 97%);
+	--color-white: hsl(0, 100%, 100%);
+	--color-error: hsla(11, 99%, 43%, 0.9);
+
+	// line-height
+	--line-height: 1.5;
+
+	// border-radius
+	--border-radius-s: 6px;
+	--border-radius-m: 14px;
+
+	// gap
+	--gap-xs: 8px;
+	--gap-sm: 16px;
+	--gap-l: 24px;
+	--gap-xl: 36px;
+}

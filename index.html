@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="icons/favicon.svg"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <title>Tip Calculator app</title>
+  </head>
+  <body>
+    <div class="calculator__wrapper">
+      <!--Header-->
+      <header class="header">
+        <h1 class="sr-only">Tip Calculator app</h1>
+        <img class="header__logo" src="./icons/logo.svg" alt="logo">
+      </header>
+
+      <!--Main content-->
+      <main class="main">
+        <div class="main__wrapper">
+          <div class="main__wrapper-content--left">
+            <!--Bill section-->
+            <section class="bill">
+              <span class="section-header bill-header">Bill</span>
+              <div class="bill-content" id="billContent">
+                <img class="bill-icon icon" src="./icons/icon-dollar.svg" alt="dollar icon">
+                <input type="number" class="bill-total total" id="billValue" placeholder="0"/>
+              </div>
+            </section>
+
+            <!--Tips section-->
+            <section class="tips">
+              <span  class="tips-header section-header">Select tip %</span>
+              <div class="tips-items">
+                <button value="5" class="tips-item">5%</button>
+                <button value="10" class="tips-item">10%</button>
+                <button value="15" class="tips-item">15%</button>
+                <button value="25" class="tips-item">25%</button>
+                <button value="50" class="tips-item">50%</button>
+                <input type="number" id="customValue" class="tips-item-custom" placeholder="Custom"/>
+              </div>
+            </section>
+
+            <!--Person section-->
+            <section class="person">
+              <div class="person-headers">
+                <span class="person-header section-header">Number of people</span>
+                <span class="person-header-error section-header">Can't be zero</span>
+              </div>
+              <div class="person-content" id="peopleContent">
+                <img class="person-icon icon" src="./icons/icon-person.svg" alt="person icon">
+                <input min="1" value="1" type="number" class="person-total total" id="peopleValue" placeholder="0"/>
+              </div>
+            </section>
+          </div>
+
+          <div class="main__wrapper-content--left">
+            <!--Sum section-->
+            <section class="sum">
+              <span class="sr-only">Total amount of tips and prices</span>
+              <div class="sum-content">
+                <div class="sum-labels__wrapper">
+                  <div class="sum-labels">
+                    <span class="sum-label">Tip Amount</span>
+                    <span class="sum-sublabel">/ person</span>
+                  </div>
+                  <span class="sum-number" id="sumTipValue">$0.00</span>
+                </div>
+                <div class="sum-labels__wrapper">
+                  <div class="sum-labels">
+                    <span class="sum-label">Total</span>
+                    <span class="sum-sublabel">/ person</span>
+                  </div>
+                  <span class="sum-number" id="sumTotalValue">$0.00</span>
+                </div>
+              </div>
+              <button class="reset-button--disabled reset-button" disabled>RESET</button>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!--Footer-->
+    <footer class="attribution">
+      <span>Challenge by <a href="https://www.frontendmentor.io/home" target="_blank">Frontend Mentor</a>
+      </span>
+      <span>Coded by <a href="https://github.com/MBaktygul" target="_blank">Baktygul</a>
+      </span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
