@@ -264,11 +264,11 @@
 
 /* -------- Attribution styles */
 .attribution {
-	position: absolute;
+	position: static;
 	text-align: center;
 	width: 100%;
 	color: var(--color-text);
-	bottom: -2rem;
+	margin-top: 5rem;
 }
 
 .attribution span a {

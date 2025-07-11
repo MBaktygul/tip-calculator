@@ -143,7 +143,7 @@ input::placeholder {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   font-family: "SpaceMono", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -156,6 +156,11 @@ footer {
   gap: var(--gap-xs);
 }
 
+input {
+  height: 100%;
+}
+
+/* -------- General styles */
 .icon {
   width: 1rem;
 }
@@ -171,7 +176,6 @@ footer {
 }
 @media only screen and (min-width: 64rem) {
   .calculator__wrapper {
-    margin: 0 auto;
     max-width: 56rem;
   }
 }
@@ -184,23 +188,16 @@ footer {
   width: 100%;
 }
 
+/* -------- Header styles */
 .header {
   width: 6rem;
-  height: auto;
   margin: 2.5rem auto;
 }
 
+/* -------- Main styles */
 .main {
   background-color: var(--color-white);
   border-radius: var(--border-radius-m);
-}
-@media only screen and (min-width: 64rem) {
-  .main {
-    height: 30rem;
-    max-height: 100%;
-    width: 100%;
-    max-width: 56rem;
-  }
 }
 
 .main__wrapper {
@@ -225,6 +222,7 @@ footer {
   gap: var(--gap-sm);
 }
 
+/* -------- Bill section */
 .bill-content {
   display: flex;
   justify-content: space-between;
@@ -234,17 +232,17 @@ footer {
   border: 2px solid transparent;
   width: 100%;
   border-radius: var(--border-radius-s);
+  cursor: pointer;
 }
 .bill-content:hover {
   border: 2px solid var(--color-accent);
-  border-radius: var(--border-radius-s);
-  cursor: pointer;
 }
 .bill-content > input {
   background-color: transparent;
   cursor: pointer;
 }
 
+/* -------- Tips section */
 .tips-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -260,7 +258,6 @@ footer {
 
 .tips-item {
   width: 100%;
-  height: auto;
   padding: 0.8rem 1rem;
   color: var(--color-white);
   background-color: var(--color-green-dark);
@@ -274,20 +271,17 @@ footer {
   color: var(--color-green-dark);
   background-color: var(--color-bg-disabled);
 }
-
 .tips-item:hover {
   color: var(--color-green-dark);
   background-color: var(--color-bg-disabled);
 }
-
-.tips-item--active {
+.tips-item.tips-item--active {
   color: var(--color-green-dark);
   background-color: var(--color-accent);
 }
 
 .tips-item-custom {
   width: 100%;
-  height: auto;
   padding: 0.8rem 1rem;
   font-size: 1.3rem;
   text-align: center;
@@ -295,13 +289,14 @@ footer {
   font-weight: var(--font-weight-bold);
   background-color: var(--color-muted);
   border: 2px solid transparent;
+  cursor: pointer;
 }
 .tips-item-custom:hover {
   border: 2px solid var(--color-accent);
   border-radius: var(--border-radius-s);
-  cursor: pointer;
 }
 
+/* -------- Person section */
 .person-content {
   display: flex;
   justify-content: space-between;
@@ -341,6 +336,7 @@ footer {
   display: block;
 }
 
+/* -------- Summary section */
 .sum {
   justify-content: space-between;
   gap: var(--gap-l);
@@ -395,6 +391,7 @@ footer {
   }
 }
 
+/* -------- Reset Button */
 .reset-button {
   padding: 0.8rem 1rem;
   background-color: var(--color-accent);
@@ -421,13 +418,13 @@ footer {
   background-color: var(--color-bg-disabled);
 }
 
+/* -------- Attribution styles */
 .attribution {
-  position: absolute;
+  position: static;
   text-align: center;
   width: 100%;
   color: var(--color-text);
-  text-wrap-style: pretty;
-  bottom: -2rem;
+  margin-top: 5rem;
 }
 
 .attribution span a {

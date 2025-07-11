@@ -35,48 +35,48 @@ buttons.forEach(btn => btn.addEventListener('click', () => {
   calculateTipAndTotal(); // Calculate tip and total amount of tips
 }));
 
-// --- Function to calculate tip and total amount of tips ---
+// --- Calculate Tip and Total ---
 const calculateTipAndTotal = () => {
-  const billAmount = parseFloat(billValue.value) || 0; // Sum of bill
-  const customTipAmount = parseFloat(customValue.value) || 0; // Sum of custom typed tips 
-  const numOfPeople = parseFloat(peopleValue.value) || 1; // Number of people
+  const billAmount = parseFloat(billValue.value) || 0; 
+  const customTipAmount = parseFloat(customValue.value) || 0;
+  const numOfPeople = parseFloat(peopleValue.value) || 1; 
 
-  // If 0 or ' ' in peopleValue, give error and delete all sum data
   if (numOfPeople === 0 || peopleValue.value === '') {
     sumTipValue.textContent = sumTotalValue.textContent = `$0.00`;
     peopleError.classList.add('person-header-error--active'); // Show error
     peopleContent.classList.add('person-content-error');
-    return; // Stop the calculation
+    return; 
   }
 
-  // If more than > 0 then delete error
   peopleError.classList.remove('person-header-error--active');
   peopleContent.classList.remove('person-content-error');
 
-  // Calculate tip for one person
   let tipAmount = 0;
 
   if (customTipAmount > 0) {
-    // If customValue is not empty, use typed number as a percent to calculate tip
-    tipAmount = billAmount * customTipAmount / 100; 
+    tipAmount = billAmount * customTipAmount / 100;
   } else {
-    // if customValue is empty, use percent from clicked button
     tipAmount = billAmount * selectedTipPercentage;
   }
 
-  const totalTipAmount = tipAmount * numOfPeople; // Total sum of tips for typed amount of people
+  const totalTipAmount = tipAmount * numOfPeople; 
   const totalAmount = totalTipAmount; 
 
-  // Update tips value
   sumTipValue.textContent = `$${tipAmount.toFixed(2)}`;
   sumTotalValue.textContent = `$${totalAmount.toFixed(2)}`;
 };
 
-// --- Reset Button ---
+
+// --- Reset Button Functionality ---
 resetBtn.addEventListener('click', () => {
-  [billValue, customValue, peopleValue].forEach(input => input.value = ''); // Clear all inputs
-  sumTipValue.textContent = sumTotalValue.textContent = `$0.00`; // Clear sums
-  resetBtn.classList.add('reset-button--disabled'); // Deactivate the resetBtn after clearing everything
+  // Clear all input fields
+  [billValue, customValue, peopleValue].forEach(input => input.value = '');
+  
+  // Reset the displayed values to $0.00
+  sumTipValue.textContent = sumTotalValue.textContent = `$0.00`;
+
+  // Disable the reset button and add the disabled class
+  resetBtn.classList.add('reset-button--disabled');
 });
 
 // --- Remove the focus from button when clicked on customValue ---
