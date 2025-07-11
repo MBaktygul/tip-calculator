@@ -16,6 +16,14 @@ const toggleResetButton = () => {
   resetBtn.classList.toggle('reset-button--disabled', !(isPositive(Number(billValue.value)) || isPositive(Number(customValue.value)) || isPositive(Number(peopleValue.value)) || billValue.value === '0' || customValue.value === '0' || peopleValue.value === '0'));
 };
 
+// --- Prevent Invalid Characters (e.g. +, -, e) ---
+const preventInvalidChars = (e) => {
+  const invalidChars = ['+', '-', 'e' , '^' ,'*']; // List of invalid characters
+  if (invalidChars.includes(e.key)) {
+    e.preventDefault(); // Prevent entering these characters
+  }
+};
+
 // --- Event Listeners ---
 [ billValue, customValue, peopleValue ].forEach(input => {
   input.addEventListener('input', () => {
